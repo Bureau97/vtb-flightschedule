@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>&lt;vtb-flightschedule> Demo</title>
+    <!-- <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="../node_modules/lit/polyfill-support.js"></script> -->
+    <script type="module" src="/dist/main.js"></script>
+    <style>
+      vtb-flight-arrival div.date-time {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="static">
+      <h2>Flight schedule (static html)</h2>
+      <vtb-flightschedule>
+        <vtb-flight-element flightnumber="KL6149" carrier="KLM">
+          <vtb-flight-departure IATA="AMS" date="2022-11-21" time="12:00" dateformat="D MMM" timezone="UTC+01:00">Amsterdam - Schiphol</vtb-flight-departure>
+          <vtb-flight-arrival IATA="JFK" date="2022-11-22" time="14:30" dateformat="" timezone="UTC-05:00">New York City - JFK</vtb-flight-arrival>
+        </vtb-flight-element>
+        <vtb-flight-element flightnumber="" carrier="Virgin">
+          <vtb-flight-departure IATA="JFK" date="2022-11-25" time="10:40" dateformat="D MMM" timezone="UTC-05:00">New York City - JFK</vtb-flight-departure>
+          <vtb-flight-arrival IATA="MIA" date="2022-11-25" time="13:15" dateformat="" timezone="UTC-05:00">Miami - Miami International Airport</vtb-flight-arrival>
+        </vtb-flight-element>
+        <vtb-flight-element flightnumber="" carrier="Emirates">
+          <vtb-flight-departure IATA="MIA" date="2022-11-30" time="21:35" dateformat="D MMM" timezone="UTC-05:00">Miami - Miami International Airport</vtb-flight-departure>
+          <vtb-flight-arrival IATA="AMS" date="2022-12-01" time="06:25" dateformat=""  timezone="UTC+01:00">Amsterdam - Schiphol</vtb-flight-departure>
+        </vtb-flight-element>
+      </vtb-flightschedule>
+    </section>
+
+
+    <section class="dynamic">
+      <h2>Flight schedule (dynamic)</h2>
+      <vtb-flightschedule id="dynamic-schedule"></vtb-flightschedule>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", (event) => {
+        console.log("DOM fully loaded and parsed");
+        const schedule = document.getElementById('dynamic-schedule');
+        schedule.flightinfo = [
+          {
+            "airlineCode": "EK",
+            "airlineObject": {
+              "__typename": "Airline",
+              "airline_no": "176",
+              "carrier_code": "EK",
+              "carrier_name": "Emirates",
+              "name": "EMIRATES"
+            },
+            "arrivalAirport": "DXB",
+            "arrivalAirportObject": {
+              "__typename": "Airport",
+              "city": "Dubai",
+              "country": "AE",
+              "description": "Dubai Airport",
+              "faa": "",
+              "iata": "DXB",
+              "iata_code": "DXB",
+              "icao": "OMDB",
+              "isMajor": false,
+              "latitude": 25.248665,
+              "longitude": 55.352917,
+              "state": "",
+              "weather_station": "OMDB"
+            },
+            "arrivalDate": "2023-07-15",
+            "arrivalTime": "06:30",
+            "departureAirport": "AMS",
+            "departureAirportObject": {
+              "__typename": "Airport",
+              "city": "Amsterdam",
+              "country": "NL",
+              "description": "Amsterdam-Schiphol Airport",
+              "faa": "",
+              "iata": "AMS",
+              "iata_code": "AMS",
+              "icao": "EHAM",
+              "isMajor": false,
+              "latitude": 52.30907,
+              "longitude": 4.763385,
+              "state": "",
+              "weather_station": "EHAM"
+            },
+            "departureDate": "2023-07-14",
+            "departureTime": "21:50",
+            "flightNumber": "150",
+            "operatedBy": null,
+            "vtbFlightId": "6z0ugbdpkdhw87nl85fxoe"
+          },
+          {
+            "airlineCode": "EK",
+            "airlineObject": {
+              "__typename": "Airline",
+              "airline_no": "176",
+              "carrier_code": "EK",
+              "carrier_name": "Emirates",
+              "name": "EMIRATES"
+            },
+            "arrivalAirport": "DPS",
+            "arrivalAirportObject": {
+              "__typename": "Airport",
+              "city": "Denpasar Bali",
+              "country": "ID",
+              "description": "Ngurah Rai Airport",
+              "faa": "",
+              "iata": "DPS",
+              "iata_code": "DPS",
+              "icao": "WRRR",
+              "isMajor": false,
+              "latitude": -8.74446,
+              "longitude": 115.16331,
+              "state": "",
+              "weather_station": "WRRR"
+            },
+            "arrivalDate": "2023-07-15",
+            "arrivalTime": "22:20",
+            "departureAirport": "DXB",
+            "departureAirportObject": {
+              "__typename": "Airport",
+              "city": "Dubai",
+              "country": "AE",
+              "description": "Dubai Airport",
+              "faa": "",
+              "iata": "DXB",
+              "iata_code": "DXB",
+              "icao": "OMDB",
+              "isMajor": false,
+              "latitude": 25.248665,
+              "longitude": 55.352917,
+              "state": "",
+              "weather_station": "OMDB"
+            },
+            "departureDate": "2023-07-15",
+            "departureTime": "09:10",
+            "flightNumber": "398",
+            "operatedBy": null,
+            "vtbFlightId": "7161vxk3xfutqna0xk3iw"
+          }
+        ];
+      });
+    </script>
+
+<pre>
+      "flightInfo": [
+        {
+          "airlineCode": "EK",
+          "airlineObject": {
+            "__typename": "Airline",
+            "airline_no": "176",
+            "carrier_code": "EK",
+            "carrier_name": "Emirates",
+            "name": "EMIRATES"
+          },
+          "arrivalAirport": "DXB",
+          "arrivalAirportObject": {
+            "__typename": "Airport",
+            "city": "Dubai",
+            "country": "AE",
+            "description": "Dubai Airport",
+            "faa": "",
+            "iata": "DXB",
+            "iata_code": "DXB",
+            "icao": "OMDB",
+            "isMajor": false,
+            "latitude": 25.248665,
+            "longitude": 55.352917,
+            "state": "",
+            "weather_station": "OMDB"
+          },
+          "arrivalDate": "2023-07-15",
+          "arrivalTime": "06:30",
+          "departureAirport": "AMS",
+          "departureAirportObject": {
+            "__typename": "Airport",
+            "city": "Amsterdam",
+            "country": "NL",
+            "description": "Amsterdam-Schiphol Airport",
+            "faa": "",
+            "iata": "AMS",
+            "iata_code": "AMS",
+            "icao": "EHAM",
+            "isMajor": false,
+            "latitude": 52.30907,
+            "longitude": 4.763385,
+            "state": "",
+            "weather_station": "EHAM"
+          },
+          "departureDate": "2023-07-14",
+          "departureTime": "21:50",
+          "flightNumber": "150",
+          "operatedBy": null,
+          "vtbFlightId": "6z0ugbdpkdhw87nl85fxoe"
+        },
+        {
+          "airlineCode": "EK",
+          "airlineObject": {
+            "__typename": "Airline",
+            "airline_no": "176",
+            "carrier_code": "EK",
+            "carrier_name": "Emirates",
+            "name": "EMIRATES"
+          },
+          "arrivalAirport": "DPS",
+          "arrivalAirportObject": {
+            "__typename": "Airport",
+            "city": "Denpasar Bali",
+            "country": "ID",
+            "description": "Ngurah Rai Airport",
+            "faa": "",
+            "iata": "DPS",
+            "iata_code": "DPS",
+            "icao": "WRRR",
+            "isMajor": false,
+            "latitude": -8.74446,
+            "longitude": 115.16331,
+            "state": "",
+            "weather_station": "WRRR"
+          },
+          "arrivalDate": "2023-07-15",
+          "arrivalTime": "22:20",
+          "departureAirport": "DXB",
+          "departureAirportObject": {
+            "__typename": "Airport",
+            "city": "Dubai",
+            "country": "AE",
+            "description": "Dubai Airport",
+            "faa": "",
+            "iata": "DXB",
+            "iata_code": "DXB",
+            "icao": "OMDB",
+            "isMajor": false,
+            "latitude": 25.248665,
+            "longitude": 55.352917,
+            "state": "",
+            "weather_station": "OMDB"
+          },
+          "departureDate": "2023-07-15",
+          "departureTime": "09:10",
+          "flightNumber": "398",
+          "operatedBy": null,
+          "vtbFlightId": "7161vxk3xfutqna0xk3iw"
+        }
+      ],
+</pre>
+  </body>
+</html>

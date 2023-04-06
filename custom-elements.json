@@ -1,0 +1,155 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "src/vtb-flightschedule.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "VtbMedia",
+          "members": [
+            {
+              "kind": "field",
+              "name": "src",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "attribute": "src"
+            },
+            {
+              "kind": "field",
+              "name": "width",
+              "attribute": "width"
+            },
+            {
+              "kind": "field",
+              "name": "height",
+              "attribute": "height"
+            },
+            {
+              "kind": "field",
+              "name": "crop",
+              "type": {
+                "text": "string | undefined"
+              },
+              "default": "''",
+              "attribute": "crop"
+            },
+            {
+              "kind": "field",
+              "name": "alt",
+              "type": {
+                "text": "string | undefined"
+              },
+              "default": "''",
+              "attribute": "alt"
+            },
+            {
+              "kind": "method",
+              "name": "_imageStyles",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "StyleInfo"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_applyCrop",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "string"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "src",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "crop",
+                  "optional": true,
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            }
+          ],
+          "attributes": [
+            {
+              "name": "src",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "fieldName": "src"
+            },
+            {
+              "name": "width",
+              "fieldName": "width"
+            },
+            {
+              "name": "height",
+              "fieldName": "height"
+            },
+            {
+              "name": "crop",
+              "type": {
+                "text": "string | undefined"
+              },
+              "default": "''",
+              "fieldName": "crop"
+            },
+            {
+              "name": "alt",
+              "type": {
+                "text": "string | undefined"
+              },
+              "default": "''",
+              "fieldName": "alt"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "vtb-flightschedule",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "VtbMedia",
+          "declaration": {
+            "name": "VtbMedia",
+            "module": "src/vtb-flightschedule.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "vtb-flightschedule",
+          "declaration": {
+            "name": "VtbMedia",
+            "module": "src/vtb-flightschedule.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/test/vtb-flightschedule_test.ts",
+      "declarations": [],
+      "exports": []
+    }
+  ]
+}
