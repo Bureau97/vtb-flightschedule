@@ -9,113 +9,485 @@
         {
           "kind": "class",
           "description": "",
-          "name": "VtbMedia",
+          "name": "VtbFlight",
           "members": [
             {
               "kind": "field",
-              "name": "src",
+              "name": "IATA",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "IATA"
+            },
+            {
+              "kind": "field",
+              "name": "date",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "date"
+            },
+            {
+              "kind": "field",
+              "name": "time",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "time"
+            },
+            {
+              "kind": "field",
+              "name": "timezone",
               "type": {
                 "text": "string"
               },
-              "default": "''",
-              "attribute": "src"
+              "default": "'02:00'",
+              "attribute": "timezone"
             },
             {
               "kind": "field",
-              "name": "width",
-              "attribute": "width"
-            },
-            {
-              "kind": "field",
-              "name": "height",
-              "attribute": "height"
-            },
-            {
-              "kind": "field",
-              "name": "crop",
+              "name": "dateformat",
               "type": {
-                "text": "string | undefined"
+                "text": "string"
               },
-              "default": "''",
-              "attribute": "crop"
+              "default": "'DD MMM (hh:mm)'",
+              "attribute": "dateformat"
             },
             {
               "kind": "field",
-              "name": "alt",
+              "name": "type",
               "type": {
-                "text": "string | undefined"
+                "text": "string"
               },
-              "default": "''",
-              "attribute": "alt"
-            },
-            {
-              "kind": "method",
-              "name": "_imageStyles",
-              "privacy": "private",
-              "return": {
-                "type": {
-                  "text": "StyleInfo"
-                }
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_applyCrop",
-              "privacy": "private",
-              "return": {
-                "type": {
-                  "text": "string"
-                }
-              },
-              "parameters": [
-                {
-                  "name": "src",
-                  "type": {
-                    "text": "string"
-                  }
-                },
-                {
-                  "name": "crop",
-                  "optional": true,
-                  "type": {
-                    "text": "string"
-                  }
-                }
-              ]
+              "default": "'departure'"
             }
           ],
           "attributes": [
             {
-              "name": "src",
+              "name": "IATA",
+              "type": {
+                "text": "string | undefined"
+              },
+              "fieldName": "IATA"
+            },
+            {
+              "name": "date",
+              "type": {
+                "text": "string | undefined"
+              },
+              "fieldName": "date"
+            },
+            {
+              "name": "time",
+              "type": {
+                "text": "string | undefined"
+              },
+              "fieldName": "time"
+            },
+            {
+              "name": "timezone",
               "type": {
                 "text": "string"
               },
-              "default": "''",
-              "fieldName": "src"
+              "default": "'02:00'",
+              "fieldName": "timezone"
             },
             {
-              "name": "width",
-              "fieldName": "width"
+              "name": "dateformat",
+              "type": {
+                "text": "string"
+              },
+              "default": "'DD MMM (hh:mm)'",
+              "fieldName": "dateformat"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "vtb-flight",
+          "customElement": true
+        },
+        {
+          "kind": "class",
+          "description": "",
+          "name": "VtbFlightDeparture",
+          "members": [
+            {
+              "kind": "field",
+              "name": "type",
+              "type": {
+                "text": "string"
+              },
+              "default": "'departure'",
+              "inheritedFrom": {
+                "name": "VtbFlight",
+                "module": "src/vtb-flightschedule.ts"
+              }
             },
             {
-              "name": "height",
-              "fieldName": "height"
-            },
-            {
-              "name": "crop",
+              "kind": "field",
+              "name": "IATA",
               "type": {
                 "text": "string | undefined"
               },
-              "default": "''",
-              "fieldName": "crop"
+              "attribute": "IATA",
+              "inheritedFrom": {
+                "name": "VtbFlight",
+                "module": "src/vtb-flightschedule.ts"
+              }
             },
             {
-              "name": "alt",
+              "kind": "field",
+              "name": "date",
               "type": {
                 "text": "string | undefined"
               },
-              "default": "''",
-              "fieldName": "alt"
+              "attribute": "date",
+              "inheritedFrom": {
+                "name": "VtbFlight",
+                "module": "src/vtb-flightschedule.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "time",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "time",
+              "inheritedFrom": {
+                "name": "VtbFlight",
+                "module": "src/vtb-flightschedule.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "timezone",
+              "type": {
+                "text": "string"
+              },
+              "default": "'02:00'",
+              "attribute": "timezone",
+              "inheritedFrom": {
+                "name": "VtbFlight",
+                "module": "src/vtb-flightschedule.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "dateformat",
+              "type": {
+                "text": "string"
+              },
+              "default": "'DD MMM (hh:mm)'",
+              "attribute": "dateformat",
+              "inheritedFrom": {
+                "name": "VtbFlight",
+                "module": "src/vtb-flightschedule.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "VtbFlight",
+            "module": "src/vtb-flightschedule.ts"
+          },
+          "tagName": "vtb-flight-departure",
+          "customElement": true,
+          "attributes": [
+            {
+              "name": "IATA",
+              "type": {
+                "text": "string | undefined"
+              },
+              "fieldName": "IATA",
+              "inheritedFrom": {
+                "name": "VtbFlight",
+                "module": "src/vtb-flightschedule.ts"
+              }
+            },
+            {
+              "name": "date",
+              "type": {
+                "text": "string | undefined"
+              },
+              "fieldName": "date",
+              "inheritedFrom": {
+                "name": "VtbFlight",
+                "module": "src/vtb-flightschedule.ts"
+              }
+            },
+            {
+              "name": "time",
+              "type": {
+                "text": "string | undefined"
+              },
+              "fieldName": "time",
+              "inheritedFrom": {
+                "name": "VtbFlight",
+                "module": "src/vtb-flightschedule.ts"
+              }
+            },
+            {
+              "name": "timezone",
+              "type": {
+                "text": "string"
+              },
+              "default": "'02:00'",
+              "fieldName": "timezone",
+              "inheritedFrom": {
+                "name": "VtbFlight",
+                "module": "src/vtb-flightschedule.ts"
+              }
+            },
+            {
+              "name": "dateformat",
+              "type": {
+                "text": "string"
+              },
+              "default": "'DD MMM (hh:mm)'",
+              "fieldName": "dateformat",
+              "inheritedFrom": {
+                "name": "VtbFlight",
+                "module": "src/vtb-flightschedule.ts"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "class",
+          "description": "",
+          "name": "VtbFlightArrival",
+          "members": [
+            {
+              "kind": "field",
+              "name": "type",
+              "type": {
+                "text": "string"
+              },
+              "default": "'arrival'",
+              "inheritedFrom": {
+                "name": "VtbFlight",
+                "module": "src/vtb-flightschedule.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "IATA",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "IATA",
+              "inheritedFrom": {
+                "name": "VtbFlight",
+                "module": "src/vtb-flightschedule.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "date",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "date",
+              "inheritedFrom": {
+                "name": "VtbFlight",
+                "module": "src/vtb-flightschedule.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "time",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "time",
+              "inheritedFrom": {
+                "name": "VtbFlight",
+                "module": "src/vtb-flightschedule.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "timezone",
+              "type": {
+                "text": "string"
+              },
+              "default": "'02:00'",
+              "attribute": "timezone",
+              "inheritedFrom": {
+                "name": "VtbFlight",
+                "module": "src/vtb-flightschedule.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "dateformat",
+              "type": {
+                "text": "string"
+              },
+              "default": "'DD MMM (hh:mm)'",
+              "attribute": "dateformat",
+              "inheritedFrom": {
+                "name": "VtbFlight",
+                "module": "src/vtb-flightschedule.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "VtbFlight",
+            "module": "src/vtb-flightschedule.ts"
+          },
+          "tagName": "vtb-flight-arrival",
+          "customElement": true,
+          "attributes": [
+            {
+              "name": "IATA",
+              "type": {
+                "text": "string | undefined"
+              },
+              "fieldName": "IATA",
+              "inheritedFrom": {
+                "name": "VtbFlight",
+                "module": "src/vtb-flightschedule.ts"
+              }
+            },
+            {
+              "name": "date",
+              "type": {
+                "text": "string | undefined"
+              },
+              "fieldName": "date",
+              "inheritedFrom": {
+                "name": "VtbFlight",
+                "module": "src/vtb-flightschedule.ts"
+              }
+            },
+            {
+              "name": "time",
+              "type": {
+                "text": "string | undefined"
+              },
+              "fieldName": "time",
+              "inheritedFrom": {
+                "name": "VtbFlight",
+                "module": "src/vtb-flightschedule.ts"
+              }
+            },
+            {
+              "name": "timezone",
+              "type": {
+                "text": "string"
+              },
+              "default": "'02:00'",
+              "fieldName": "timezone",
+              "inheritedFrom": {
+                "name": "VtbFlight",
+                "module": "src/vtb-flightschedule.ts"
+              }
+            },
+            {
+              "name": "dateformat",
+              "type": {
+                "text": "string"
+              },
+              "default": "'DD MMM (hh:mm)'",
+              "fieldName": "dateformat",
+              "inheritedFrom": {
+                "name": "VtbFlight",
+                "module": "src/vtb-flightschedule.ts"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "class",
+          "description": "",
+          "name": "VtbFlightElement",
+          "members": [
+            {
+              "kind": "field",
+              "name": "flightnumber",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "flightnumber"
+            },
+            {
+              "kind": "field",
+              "name": "carrier",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "carrier"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "flightnumber",
+              "type": {
+                "text": "string | undefined"
+              },
+              "fieldName": "flightnumber"
+            },
+            {
+              "name": "carrier",
+              "type": {
+                "text": "string | undefined"
+              },
+              "fieldName": "carrier"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "vtb-flight-element",
+          "customElement": true
+        },
+        {
+          "kind": "class",
+          "description": "",
+          "name": "VtbFlightSchedule",
+          "members": [
+            {
+              "kind": "field",
+              "name": "flightinfo",
+              "type": {
+                "text": "Array<VtbFlightData> | undefined"
+              },
+              "attribute": "flightinfo"
+            },
+            {
+              "kind": "field",
+              "name": "dateformat",
+              "type": {
+                "text": "string"
+              },
+              "default": "'DD MMM (hh:mm)'",
+              "attribute": "dateformat"
+            },
+            {
+              "kind": "method",
+              "name": "_renderFlightInfo",
+              "privacy": "private"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "flightinfo",
+              "type": {
+                "text": "Array<VtbFlightData> | undefined"
+              },
+              "fieldName": "flightinfo"
+            },
+            {
+              "name": "dateformat",
+              "type": {
+                "text": "string"
+              },
+              "default": "'DD MMM (hh:mm)'",
+              "fieldName": "dateformat"
             }
           ],
           "superclass": {
@@ -124,14 +496,217 @@
           },
           "tagName": "vtb-flightschedule",
           "customElement": true
+        },
+        {
+          "kind": "class",
+          "description": "",
+          "name": "VtbFlightData",
+          "members": [
+            {
+              "kind": "field",
+              "name": "date",
+              "type": {
+                "text": "Date | undefined"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "time",
+              "type": {
+                "text": "Date | undefined"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "IATA",
+              "type": {
+                "text": "string | undefined"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "dateformat",
+              "type": {
+                "text": "string | undefined"
+              },
+              "default": "'DD MMM'"
+            },
+            {
+              "kind": "field",
+              "name": "timezone",
+              "type": {
+                "text": "string | undefined"
+              },
+              "default": "'UTC+01:00'"
+            },
+            {
+              "kind": "field",
+              "name": "country",
+              "type": {
+                "text": "string | undefined"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "city",
+              "type": {
+                "text": "string | undefined"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "description",
+              "type": {
+                "text": "string | undefined"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "class",
+          "description": "",
+          "name": "VtbFlightCarrier",
+          "members": [
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string | undefined"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "code",
+              "type": {
+                "text": "string | undefined"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "class",
+          "description": "",
+          "name": "VtbFlightElementData",
+          "members": [
+            {
+              "kind": "field",
+              "name": "departure",
+              "type": {
+                "text": "VtbFlightData | undefined"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "arrival",
+              "type": {
+                "text": "VtbFlightData | undefined"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "carrier",
+              "type": {
+                "text": "VtbFlightCarrier | undefined"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "flightnumber",
+              "type": {
+                "text": "string | undefined"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "day",
+              "type": {
+                "text": "number | undefined"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "class",
+          "description": "",
+          "name": "VtbFlightDataTransformer",
+          "members": [
+            {
+              "kind": "method",
+              "name": "load",
+              "parameters": [
+                {
+                  "name": "vtbSrcData",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ]
+            }
+          ]
         }
       ],
       "exports": [
         {
-          "kind": "js",
-          "name": "VtbMedia",
+          "kind": "custom-element-definition",
+          "name": "vtb-flight",
           "declaration": {
-            "name": "VtbMedia",
+            "name": "VtbFlight",
+            "module": "src/vtb-flightschedule.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "VtbFlightDeparture",
+          "declaration": {
+            "name": "VtbFlightDeparture",
+            "module": "src/vtb-flightschedule.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "vtb-flight-departure",
+          "declaration": {
+            "name": "VtbFlightDeparture",
+            "module": "src/vtb-flightschedule.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "VtbFlightArrival",
+          "declaration": {
+            "name": "VtbFlightArrival",
+            "module": "src/vtb-flightschedule.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "vtb-flight-arrival",
+          "declaration": {
+            "name": "VtbFlightArrival",
+            "module": "src/vtb-flightschedule.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "VtbFlightElement",
+          "declaration": {
+            "name": "VtbFlightElement",
+            "module": "src/vtb-flightschedule.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "vtb-flight-element",
+          "declaration": {
+            "name": "VtbFlightElement",
+            "module": "src/vtb-flightschedule.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "VtbFlightSchedule",
+          "declaration": {
+            "name": "VtbFlightSchedule",
             "module": "src/vtb-flightschedule.ts"
           }
         },
@@ -139,7 +714,39 @@
           "kind": "custom-element-definition",
           "name": "vtb-flightschedule",
           "declaration": {
-            "name": "VtbMedia",
+            "name": "VtbFlightSchedule",
+            "module": "src/vtb-flightschedule.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "VtbFlightData",
+          "declaration": {
+            "name": "VtbFlightData",
+            "module": "src/vtb-flightschedule.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "VtbFlightCarrier",
+          "declaration": {
+            "name": "VtbFlightCarrier",
+            "module": "src/vtb-flightschedule.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "VtbFlightElementData",
+          "declaration": {
+            "name": "VtbFlightElementData",
+            "module": "src/vtb-flightschedule.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "VtbFlightDataTransformer",
+          "declaration": {
+            "name": "VtbFlightDataTransformer",
             "module": "src/vtb-flightschedule.ts"
           }
         }
