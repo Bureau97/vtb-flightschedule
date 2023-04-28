@@ -118,7 +118,6 @@ export class VtbFlightSchedule extends LitElement {
   dateformat = 'DD MMM (hh:mm)';
 
   override render() {
-    console.info(this.children, this.flightinfo);
     let _innerHTML: string | TemplateResult = '';
     if (this.children.length == 0 && this.flightinfo) {
       _innerHTML = this._renderFlightInfo();
@@ -140,7 +139,6 @@ export class VtbFlightSchedule extends LitElement {
       let arrival_date: string | Dayjs | Date | null = null;
       let arrival_time: string | Dayjs | Date | null = null;
 
-      console.info(_schedule.departure?.date, typeof _schedule.departure?.date);
       if (
         _schedule.departure?.date &&
         typeof _schedule.departure?.date == 'string'

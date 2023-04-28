@@ -110,7 +110,7 @@
 
         window.setTimeout(function () {
           console.info('adding flight');
-          schedule.flightinfo.push({
+          schedule.flightinfo = [{
             arrival: {
               date: '2023-08-14',
               time: '11:50',
@@ -128,7 +128,27 @@
               code: 'K',
             },
             flightnumber: 'K150',
-          });
+          },
+          {
+            arrival: {
+              date: '2023-11-30',
+              time: '11:50',
+              IATA: 'AMS',
+              description: 'Amsterdam-Schiphol Airport',
+            },
+            departure: {
+              date: '2023-08-15',
+              time: '21:35',
+              IATA: 'MIA',
+              description: 'Miami - Miami International Airport',
+            },
+            carrier: {
+              name: 'Emirates',
+              code: 'EM',
+            },
+            flightnumber: 'EM1235',
+          }
+          ];
         }, 5000);
       });
     </script>
