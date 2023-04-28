@@ -237,7 +237,7 @@ export class VtbFlightElementData {
 }
 
 export class VtbFlightDataTransformer {
-  load(vtbSrcData: any) {
+  load(vtbSrcData: any) {  // eslint-disable-line @typescript-eslint/no-explicit-any
     const flightElements: Array<VtbFlightElementData> = [];
     for (const segment of vtbSrcData.segments) {
       if (!segment.flightinfo || segment.flightinfo.length <= 0) {
