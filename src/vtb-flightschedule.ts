@@ -1,6 +1,5 @@
 import {LitElement, css, html} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
-// import { styleMap, StyleInfo } from "lit/directives/style-map.js";
 import {ifDefined} from 'lit/directives/if-defined.js';
 import {TemplateResult} from 'lit-element';
 
@@ -166,7 +165,10 @@ export class VtbFlightSchedule extends LitElement {
         arrival_date = dayjs(_schedule.arrival?.date);
       }
 
-      if (_schedule.arrival?.time && typeof _schedule.arrival?.time == 'string') {
+      if (
+        _schedule.arrival?.time &&
+        typeof _schedule.arrival?.time == 'string'
+      ) {
         const _time = _schedule.arrival.time as string;
         const _s = _time.split(/:/);
 
