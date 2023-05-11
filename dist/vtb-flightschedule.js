@@ -6,7 +6,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { LitElement, css, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-// import { styleMap, StyleInfo } from "lit/directives/style-map.js";
 import { ifDefined } from 'lit/directives/if-defined.js';
 import dayjs from 'dayjs';
 import 'dayjs/locale/nl'; // import locale
@@ -131,7 +130,6 @@ let VtbFlightSchedule = class VtbFlightSchedule extends LitElement {
         this.dateformat = 'DD MMM (hh:mm)';
     }
     render() {
-        console.info(this.children, this.flightinfo);
         let _innerHTML = '';
         if (this.children.length == 0 && this.flightinfo) {
             _innerHTML = this._renderFlightInfo();
@@ -143,7 +141,7 @@ let VtbFlightSchedule = class VtbFlightSchedule extends LitElement {
     `;
     }
     _renderFlightInfo() {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _t;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
         const flightinfo = this.flightinfo;
         const scheduleTemplates = [];
         for (const _schedule of flightinfo) {
@@ -151,13 +149,12 @@ let VtbFlightSchedule = class VtbFlightSchedule extends LitElement {
             let departure_time = null;
             let arrival_date = null;
             let arrival_time = null;
-            console.info((_a = _schedule.departure) === null || _a === void 0 ? void 0 : _a.date, typeof ((_b = _schedule.departure) === null || _b === void 0 ? void 0 : _b.date));
-            if (((_c = _schedule.departure) === null || _c === void 0 ? void 0 : _c.date) &&
-                typeof ((_d = _schedule.departure) === null || _d === void 0 ? void 0 : _d.date) == 'string') {
-                departure_date = dayjs((_e = _schedule.departure) === null || _e === void 0 ? void 0 : _e.date);
+            if (((_a = _schedule.departure) === null || _a === void 0 ? void 0 : _a.date) &&
+                typeof ((_b = _schedule.departure) === null || _b === void 0 ? void 0 : _b.date) == 'string') {
+                departure_date = dayjs((_c = _schedule.departure) === null || _c === void 0 ? void 0 : _c.date);
             }
-            if (((_f = _schedule.departure) === null || _f === void 0 ? void 0 : _f.time) &&
-                typeof ((_g = _schedule.departure) === null || _g === void 0 ? void 0 : _g.time) == 'string') {
+            if (((_d = _schedule.departure) === null || _d === void 0 ? void 0 : _d.time) &&
+                typeof ((_e = _schedule.departure) === null || _e === void 0 ? void 0 : _e.time) == 'string') {
                 const _time = _schedule.departure.time;
                 const _s = _time.split(/:/);
                 departure_time = dayjs()
@@ -165,11 +162,12 @@ let VtbFlightSchedule = class VtbFlightSchedule extends LitElement {
                     .set('minute', parseInt(_s[1], 10))
                     .set('second', 0);
             }
-            if (((_h = _schedule.arrival) === null || _h === void 0 ? void 0 : _h.date) &&
-                typeof ((_j = _schedule.arrival) === null || _j === void 0 ? void 0 : _j.date) == 'string') {
-                arrival_date = dayjs((_k = _schedule.arrival) === null || _k === void 0 ? void 0 : _k.date);
+            if (((_f = _schedule.arrival) === null || _f === void 0 ? void 0 : _f.date) &&
+                typeof ((_g = _schedule.arrival) === null || _g === void 0 ? void 0 : _g.date) == 'string') {
+                arrival_date = dayjs((_h = _schedule.arrival) === null || _h === void 0 ? void 0 : _h.date);
             }
-            if (((_l = _schedule.arrival) === null || _l === void 0 ? void 0 : _l.time) && typeof ((_m = _schedule.arrival) === null || _m === void 0 ? void 0 : _m.time) == 'string') {
+            if (((_j = _schedule.arrival) === null || _j === void 0 ? void 0 : _j.time) &&
+                typeof ((_k = _schedule.arrival) === null || _k === void 0 ? void 0 : _k.time) == 'string') {
                 const _time = _schedule.arrival.time;
                 const _s = _time.split(/:/);
                 arrival_time = dayjs()
@@ -178,22 +176,22 @@ let VtbFlightSchedule = class VtbFlightSchedule extends LitElement {
                     .set('second', 0);
             }
             scheduleTemplates.push(html `
-        <vtb-flight-element carrier=${ifDefined((_o = _schedule.carrier) === null || _o === void 0 ? void 0 : _o.name)}>
+        <vtb-flight-element carrier=${ifDefined((_l = _schedule.carrier) === null || _l === void 0 ? void 0 : _l.name)}>
           <vtb-flight-departure
             date=${ifDefined(departure_date === null || departure_date === void 0 ? void 0 : departure_date.format('YYYY-MM-DD'))}
             time=${ifDefined(departure_time === null || departure_time === void 0 ? void 0 : departure_time.format('HH:mm'))}
-            IATA=${ifDefined((_p = _schedule.departure) === null || _p === void 0 ? void 0 : _p.IATA)}
+            IATA=${ifDefined((_m = _schedule.departure) === null || _m === void 0 ? void 0 : _m.IATA)}
             dateformat=${this.dateformat}
           >
-            ${ifDefined((_q = _schedule.departure) === null || _q === void 0 ? void 0 : _q.description)}
+            ${ifDefined((_o = _schedule.departure) === null || _o === void 0 ? void 0 : _o.description)}
           </vtb-flight-departure>
           <vtb-flight-arrival
             date=${ifDefined(arrival_date === null || arrival_date === void 0 ? void 0 : arrival_date.format('YYYY-MM-DD'))}
             time=${ifDefined(arrival_time === null || arrival_time === void 0 ? void 0 : arrival_time.format('HH:mm'))}
-            IATA=${ifDefined((_r = _schedule.arrival) === null || _r === void 0 ? void 0 : _r.IATA)}
+            IATA=${ifDefined((_p = _schedule.arrival) === null || _p === void 0 ? void 0 : _p.IATA)}
             dateformat=${this.dateformat}
           >
-            ${ifDefined((_t = _schedule.arrival) === null || _t === void 0 ? void 0 : _t.description)}
+            ${ifDefined((_q = _schedule.arrival) === null || _q === void 0 ? void 0 : _q.description)}
           </vtb-flight-arrival>
         </vtb-flight-element>
       `);
