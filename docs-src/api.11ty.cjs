@@ -4,14 +4,16 @@
  */
 module.exports = class Docs {
   data() {
+    console.info('data methos called');
     return {
       layout: "page.11ty.cjs",
-      title: "<my-element> ⌲ Docs",
+      title: "<vtb-flightschedule> ⌲ Docs",
     };
   }
 
   render(data) {
-    const manifest = data.api["11tydata"].customElements;
+    console.info(data);
+    const manifest = data['api.11tydata'].customElements;
     const elements = manifest.modules.reduce(
       (els, module) =>
         els.concat(

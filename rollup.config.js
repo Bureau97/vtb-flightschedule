@@ -4,13 +4,15 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-import summary from 'rollup-plugin-summary';
-import {terser} from '@rollup/plugin-terser';
+// import summary from 'rollup-plugin-summary';
+import terser from '@rollup/plugin-terser';
 import resolve from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
+import typescript from '@rollup/plugin-typescript';
+import commonjs from '@rollup/plugin-commonjs';
 
 export default {
-  input: 'vtb-flightschedule.js',
+  input: 'dist/vtb-flightschedule.js',
   output: {
     file: 'vtb-flightschedule.bundled.js',
     format: 'esm',
@@ -21,7 +23,9 @@ export default {
     }
   },
   plugins: [
-    replace({'Reflect.decorate': 'undefined'}),
+    commonjs(),
+    // typescript(),
+    replace({'Reflect.decorate': 'undefined', 'preventAssignment': true}),
     resolve(),
     terser({
       ecma: 2017,
@@ -33,6 +37,6 @@ export default {
         },
       },
     }),
-    summary(),
+    // summary(),
   ],
 };

@@ -1,27 +1,27 @@
 ---
 layout: page.11ty.cjs
-title: <my-element> ⌲ Home
+title: <vtb-flightschedule> ⌲ Home
 ---
 
-# &lt;my-element>
+# &lt;vtb-flightschedule>
 
-`<my-element>` is an awesome element. It's a great introduction to building web components with LitElement, with nice documentation site as well.
+`<vtb-flightschedule>` is an awesome element. It's a great introduction to building web components with LitElement, with nice documentation site as well.
 
 ## As easy as HTML
 
 <section class="columns">
   <div>
 
-`<my-element>` is just an HTML element. You can it anywhere you can use HTML!
+`<vtb-flightschedule>` is just an HTML element. You can it anywhere you can use HTML!
 
 ```html
-<my-element></my-element>
+<vtb-flightschedule></vtb-flightschedule>
 ```
 
   </div>
   <div>
 
-<my-element></my-element>
+<vtb-flightschedule></vtb-flightschedule>
 
   </div>
 </section>
@@ -31,16 +31,16 @@ title: <my-element> ⌲ Home
 <section class="columns">
   <div>
 
-`<my-element>` can be configured with attributed in plain HTML.
+`<vtb-flightschedule>` can be configured with attributed in plain HTML.
 
 ```html
-<my-element name="HTML"></my-element>
+<vtb-flightschedule name="HTML"></vtb-flightschedule>
 ```
 
   </div>
   <div>
 
-<my-element name="HTML"></my-element>
+<vtb-flightschedule name="HTML"></vtb-flightschedule>
 
   </div>
 </section>
@@ -50,7 +50,7 @@ title: <my-element> ⌲ Home
 <section class="columns">
   <div>
 
-`<my-element>` can be used with declarative rendering libraries like Angular, React, Vue, and lit-html
+`<vtb-flightschedule>` can be used with declarative rendering libraries like Angular, React, Vue, and lit-html
 
 ```js
 import { html, render } from "lit-html";
@@ -59,8 +59,8 @@ const name = "lit-html";
 
 render(
   html`
-    <h2>This is a &lt;my-element&gt;</h2>
-    <my-element .name=${name}></my-element>
+    <h2>This is a &lt;vtb-flightschedule&gt;</h2>
+    <vtb-flightschedule .name=${name}></vtb-flightschedule>
   `,
   document.body
 );
@@ -69,8 +69,8 @@ render(
   </div>
   <div>
 
-<h2>This is a &lt;my-element&gt;</h2>
-<my-element name="lit-html"></my-element>
+<h2>This is a &lt;vtb-flightschedule&gt;</h2>
+<vtb-flightschedule name="lit-html"></vtb-flightschedule>
 
   </div>
 </section>

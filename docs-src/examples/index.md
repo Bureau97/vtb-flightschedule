@@ -1,20 +1,20 @@
 ---
 layout: example.11ty.cjs
-title: <my-element> ⌲ Examples ⌲ Basic
+title: <vtb-flightschedule> ⌲ Examples ⌲ Basic
 tags: example
 name: Basic
 description: A basic example
 ---
 
 <style>
-  my-element p {
+  vtb-flightschedule p {
     border: solid 1px blue;
     padding: 8px;
   }
 </style>
-<my-element>
+<vtb-flightschedule>
   <p>This is child content</p>
-</my-element>
+</vtb-flightschedule>
 
 <h3>CSS</h3>
 
@@ -28,7 +28,7 @@ p {
 <h3>HTML</h3>
 
 ```html
-<my-element>
+<vtb-flightschedule>
   <p>This is child content</p>
-</my-element>
+</vtb-flightschedule>
 ```
